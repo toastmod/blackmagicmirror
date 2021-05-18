@@ -1,4 +1,5 @@
 // Modified by hokein
+// Modified AGAIN by toastmod
 //
 // Copyright 2014 Intel Inc.
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,21 +17,6 @@ const {desktopCapturer} = require('electron');
 
 let desktopSharing = false;
 let localStream;
-
-// function refresh() {
-//     $('select').imagepicker({
-//         hide_select : true
-//     });
-// }
-
-// function addSource(source) {
-//     $('select').append($('<option>', {
-//         value: source.id.replace(":", ""),
-//         text: source.name
-//     }));
-//     $('select option[value="' + source.id.replace(":", "") + '"]').attr('data-img-src', source.thumbnail.toDataURL());
-//     refresh();
-// }
 
 function showSources() {
     desktopCapturer.getSources({ types:['window', 'screen'] }).then(async sources => {
@@ -104,9 +90,5 @@ $(document).ready(function() {
     showSources();
     refresh();
 });
-
-// document.querySelector('button').addEventListener('click', function(e) {
-//     toggle();
-// });
 
 toggle();
